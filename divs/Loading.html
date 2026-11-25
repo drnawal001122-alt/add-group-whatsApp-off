@@ -1,0 +1,24 @@
+<input type="hidden" id="DivName" value="Loading">
+
+<div class="whatsapp-card" id="loadingContainer">
+  <div class="group-header">
+    <div style="margin-bottom: 24px; color: var(--wa-primary);">
+      <svg width="64" height="64" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm5.8 14.16c-.25.71-1.29 1.3-1.78 1.37-.49.07-1.12.09-3.23-.79-2.7-1.12-4.44-3.87-4.57-4.05-.14-.18-1.1-1.46-1.1-2.78 0-1.32.69-1.97.94-2.23.25-.26.6-.33.82-.33h.58c.18 0 .42-.07.66.5.25.59.86 2.09.93 2.24.08.15.13.33.03.53-.1.2-.21.3-.37.49-.16.19-.34.33-.49.52-.16.19-.33.39-.14.72.19.33.84 1.39 1.8 2.25 1.24 1.1 2.28 1.44 2.61 1.61.33.16.52.14.72-.08.2-.23.86-1 .99-1.35.13-.35.26-.29.45-.22s1.19.56 1.39.66c.2.1.33.15.38.24.06.09.06.51-.19 1.22z"/>
+      </svg>
+    </div>
+
+    <div class="spinner"></div>
+
+    <h2 class="group-title" style="font-size: 1.25rem; margin-top: 16px;">جاري التحقق والاتصال ...</h2>
+    <span class="group-subtitle" style="font-size: 0.85rem; color: var(--wa-text-secondary-light);">يرجى عدم مغادرة الصفحة حتى اكتمال العملية</span>
+  </div>
+
+  <p style="color: var(--wa-text-secondary-light); font-size: 0.9rem; text-align: center; max-width: 320px; margin: 0 auto 24px auto;">
+    سيتم الانضمام تلقائياً إلى مجموعة WhatsApp بعد اكتمال التحميل
+  </p>
+
+  <button onclick="stopLoading()" class="btn-primary" style="background-color: var(--wa-input-bg-light); color: var(--wa-text-primary-light); border: 1.5px solid var(--wa-border-light);" id="cancelBtn">
+    <span>إلغاء</span>
+  </button>
+</div>

